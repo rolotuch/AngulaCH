@@ -1,0 +1,25 @@
+<h3>Listado de Héroes</h3>
+
+<h3 *ngIf="addHero">Héroe Agregado <small class="text-success"> {{addHero}} </small></h3>
+<button class="btn btn-outline-primary" (click)="agregarHeroe()">Agregar</button>
+<!-- si ya no hay ningun heroe mostrado no es necesario mostrar este titulo -->
+<div *ngIf="deleteHero; else noBorrado">
+  <h3>Héroe Borrado <small class="text-danger"> {{deleteHero}} </small> </h3>
+</div>
+
+<ng-template #noBorrado>
+  <h3><small class="text-warning"> No hay elementos Eliminados </small> </h3>
+</ng-template>
+
+
+<button class="btn btn-outline-danger" *ngIf="heroNames.length > 0" (click)="removeLastHero()">Borrar Último
+  Héroe</button>
+
+
+<ul class="mt-2 list-group">
+  <li *ngFor="let name of heroNames" class="list-group-item">{{name}}</li>
+  <!-- <li class="list-group-item">Ironman</li >
+    <li class="list-group-item">Hulk</li >
+    <li class="list-group-item">Thor</li >
+    <li class="list-group-item">Capitan America</li> -->
+</ul>
