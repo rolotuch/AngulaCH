@@ -1,0 +1,14 @@
+<h1>DBZ Main Page</h1>
+<hr>
+<div class="row">
+  <!-- ojo aca se llama al emit onDelete no al metodo onDeleteCharacter -->
+  <div class="col">
+    <dbz-lista [characterList]="characters"
+
+     (onDelete)="onDeleteCharacter($event)"></dbz-lista>
+  </div>
+  <div class="col">
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+
+  </div>
+</div>
